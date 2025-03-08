@@ -1,0 +1,330 @@
+{
+	"info": {
+		"_postman_id": "8ae66728-a42c-4eba-92da-50d31a756b50",
+		"name": "loan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "41634443"
+	},
+	"item": [
+		{
+			"name": "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=your-key",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\"email\": \"amn@gmail.com\",\r\n\"password\": \"123456\",\r\n\"returnSecureToken\": true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://identitytoolkit.googleapis.com/v1/accounts:signInWithPassword?key=AIzaSyDWrk2GzJ4JAfRXzXusP5afabwW2qHOwco",
+					"protocol": "https",
+					"host": [
+						"identitytoolkit",
+						"googleapis",
+						"com"
+					],
+					"path": [
+						"v1",
+						"accounts:signInWithPassword"
+					],
+					"query": [
+						{
+							"key": "key",
+							"value": "AIzaSyDWrk2GzJ4JAfRXzXusP5afabwW2qHOwco"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create loan",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjNDAxN2U3MGE4MWM5NTMxY2YxYjY4MjY4M2Q5OThlNGY1NTg5MTkiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoidXNlciIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9hc3NpZ25tZW50MDQtYmE2YzMiLCJhdWQiOiJhc3NpZ25tZW50MDQtYmE2YzMiLCJhdXRoX3RpbWUiOjE3NDE0MzEwNTcsInVzZXJfaWQiOiJIQWpPenhRWU5MVVBzV1FHcUFMU2RsaE5EZjYyIiwic3ViIjoiSEFqT3p4UVlOTFVQc1dRR3FBTFNkbGhORGY2MiIsImlhdCI6MTc0MTQzMTA1NywiZXhwIjoxNzQxNDM0NjU3LCJlbWFpbCI6Im9tcGF0ZWxAZ21haWwuY29tIiwiZW1haWxfdmVyaWZpZWQiOmZhbHNlLCJmaXJlYmFzZSI6eyJpZGVudGl0aWVzIjp7ImVtYWlsIjpbIm9tcGF0ZWxAZ21haWwuY29tIl19LCJzaWduX2luX3Byb3ZpZGVyIjoicGFzc3dvcmQifX0.uH9GcRb1lDvzmi9CK5fdJxAS5gJg2u816yoH1SrQsWXiglI1djwM6mrCHqAEzHbmHfrkaISehjAB2ZFGsqPrqQWvGKHnMmcedk3IiWyBytP7GY2EqCuup2Ur2lFXzouhyZNe_bZfWddnZTVG0tdiKeAryVOG-jfgKTPUQy5csKyugd7WRCgKZR5gUFqbIhzZBLRWfzfBPbRdjx07Y6260aJeK3IzEt16AgbWpiX8LvEwvELbBMXP8dlXYLK1k6d1anN_AWt9K34iSmx2nbNRHj1Su-T9QM151-HcAWALNRbJUeEAa_q6MnXFH9yqAGk9u07XC0x_GD0arjgIWDYV4Q",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"loanAmount\": 5000,\r\n  \"loanPurpose\": \"Home Renovation\",\r\n  \"status\": \"pending\"\r\n}\r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/loans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "review loan",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjNDAxN2U3MGE4MWM5NTMxY2YxYjY4MjY4M2Q5OThlNGY1NTg5MTkiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoib2ZmaWNlciIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9hc3NpZ25tZW50MDQtYmE2YzMiLCJhdWQiOiJhc3NpZ25tZW50MDQtYmE2YzMiLCJhdXRoX3RpbWUiOjE3NDE0MzExOTYsInVzZXJfaWQiOiJ0MTJVZHdnRkdqTkd1TmIxaXRocmFhRmRDaXYxIiwic3ViIjoidDEyVWR3Z0ZHak5HdU5iMWl0aHJhYUZkQ2l2MSIsImlhdCI6MTc0MTQzMTE5NiwiZXhwIjoxNzQxNDM0Nzk2LCJlbWFpbCI6ImFrYXNoQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJha2FzaEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.qJgNxftx98QkrV2xv1GwVz-RElC7hgxXsySZJl27PTVDKa2CMzjBXs_BvuhU58-8MYrgRXJ4Xsj8coll9a0jr7Ts5Oygjyp2b2JWqD6jLL1X8qLLy6Gn_BIAHtmypvQIvZuc01JYQog25mjhXB26IZoQ8niAC2kVhnTm8dT6nt12dijTcwzcTxClPNHQWLE3wtRWyE85Vv4pnlHeRg4okVA6yE-0UILqzjRCVeutYQV-QvTkYPdzuH3fBzwEzqdZ91vTta51cCXFaKsdgMCsT1MMc3HZtcEMAGIT_DXlclClYdLYNZGqMiCCfSv0qcDXBlrFII79ICznl3O-I68Efg",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"under review\"\r\n}\r\n ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/loans/1/review",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"loans",
+						"1",
+						"review"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "approve loan",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjNDAxN2U3MGE4MWM5NTMxY2YxYjY4MjY4M2Q5OThlNGY1NTg5MTkiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoibWFuYWdlciIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9hc3NpZ25tZW50MDQtYmE2YzMiLCJhdWQiOiJhc3NpZ25tZW50MDQtYmE2YzMiLCJhdXRoX3RpbWUiOjE3NDE0MzE0MDQsInVzZXJfaWQiOiI2YTNXb0N5MHN4VGlOVHlFVVBKcUw4UGNiR0kzIiwic3ViIjoiNmEzV29DeTBzeFRpTlR5RVVQSnFMOFBjYkdJMyIsImlhdCI6MTc0MTQzMTQwNCwiZXhwIjoxNzQxNDM1MDA0LCJlbWFpbCI6ImFtbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYW1uQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.sBH5cZuBqyaPI8gpFe4JsoAw83N4Ctk5UsYEDqyqNYaHgYvt-NeIZD0B2NxvdnAhtPpBRG1XwrkzbloSl9_dEHTo9Q8XkuGOGCjtzYXEA1rET2gqRH9tbbxEjFTlfoYN8LRtfSPStHhI1NjlhttzDoao1iGPBS-iD4cytyz9N4EmYVYoVJ-5tPjCN5f3L3SkjGhN9Hlbp_Uzn7tf1peW7Ia-DfCuju1jivBtYOlhuvSTC_LXP66L0PfvF--qx7tBH07mx2-ywtYDY-00Kegtjhr5G8OZcKtag13QI-ZpyWDRY_J0xHiLSUDdImMHgIF2_ssatKKhCQFCvc3zrHNfKQ",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"approved\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/loans/1/approve",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"loans",
+						"1",
+						"approve"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all loans",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjNDAxN2U3MGE4MWM5NTMxY2YxYjY4MjY4M2Q5OThlNGY1NTg5MTkiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoib2ZmaWNlciIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9hc3NpZ25tZW50MDQtYmE2YzMiLCJhdWQiOiJhc3NpZ25tZW50MDQtYmE2YzMiLCJhdXRoX3RpbWUiOjE3NDE0MzE1NDEsInVzZXJfaWQiOiJ0MTJVZHdnRkdqTkd1TmIxaXRocmFhRmRDaXYxIiwic3ViIjoidDEyVWR3Z0ZHak5HdU5iMWl0aHJhYUZkQ2l2MSIsImlhdCI6MTc0MTQzMTU0MSwiZXhwIjoxNzQxNDM1MTQxLCJlbWFpbCI6ImFrYXNoQGdtYWlsLmNvbSIsImVtYWlsX3ZlcmlmaWVkIjpmYWxzZSwiZmlyZWJhc2UiOnsiaWRlbnRpdGllcyI6eyJlbWFpbCI6WyJha2FzaEBnbWFpbC5jb20iXX0sInNpZ25faW5fcHJvdmlkZXIiOiJwYXNzd29yZCJ9fQ.RSe1I4MUaGeHDAxvItdbmV_3kf7IAWYYF64rU0q5soBmQwjm0I8mGg3IpqwZzmSQttglzEPW3X_geBA4N4dhlJ_dKqpOA0dLsi_nr9HgBYChIHuTrk8aMo9gwZYQZBWYbtjSQmM3IKJKNcG2ir1PiyD0XfCKsYaqgfgv4trZ4QWqatyVJaft30mlYS8E765BgZwLaPlHJRz6oMDw2CIbFvFSaQjEyCqz_CnVKo90AzWROeeeisoSwLw_BagjI2RTEqlmw10J2BlDoUTCCVC3DDP3_q1LYP6fmjoUMYm8dI3tvuHmcuhzDYSuNnf2s1fI0W15GkiRfs07B1ChRcOJig",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"approved\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/loans",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"loans"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set roles",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjNDAxN2U3MGE4MWM5NTMxY2YxYjY4MjY4M2Q5OThlNGY1NTg5MTkiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoibWFuYWdlciIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9hc3NpZ25tZW50MDQtYmE2YzMiLCJhdWQiOiJhc3NpZ25tZW50MDQtYmE2YzMiLCJhdXRoX3RpbWUiOjE3NDE0MzE2NjgsInVzZXJfaWQiOiI2YTNXb0N5MHN4VGlOVHlFVVBKcUw4UGNiR0kzIiwic3ViIjoiNmEzV29DeTBzeFRpTlR5RVVQSnFMOFBjYkdJMyIsImlhdCI6MTc0MTQzMTY2OCwiZXhwIjoxNzQxNDM1MjY4LCJlbWFpbCI6ImFtbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYW1uQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.J4lAfiHaBOiNMpeaAnG7n1LSIZku1z5cwUa8c5yG8i3UO7f-0cblLBgDYergkIk7WQ-g8XXBRgXqM0hBYDafNWzlD6sMpBsgoypG6xe_ktRA6NTf_1LuddX9hM6Vlovz7P0ZGHPXl0i-Haav21vVPHtuzjGqo4morOpCvG2iq8VbcVqEius0B462hvs6Yh0nb29pIbgsml6K8fEyk3R6rn4oeFZq15IffI6FJPtKTF4Ljt_8GQkZrA67zmFgaD2wgxDEqUqq_n6AfH3F_MMzVQ31jXqakeGzuMXvFTDI9ZZpvJxTrwXd2moB24e8iblSIu2rIVIYerxlGtC7_sek0w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"uid\": \"pc2eP4Bq99ezsnmecFqIuSE6uef1\",  \r\n  \"role\": \"user\"  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/admin/set-role",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"admin",
+						"set-role"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user detail",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJSUzI1NiIsImtpZCI6ImJjNDAxN2U3MGE4MWM5NTMxY2YxYjY4MjY4M2Q5OThlNGY1NTg5MTkiLCJ0eXAiOiJKV1QifQ.eyJyb2xlIjoibWFuYWdlciIsImlzcyI6Imh0dHBzOi8vc2VjdXJldG9rZW4uZ29vZ2xlLmNvbS9hc3NpZ25tZW50MDQtYmE2YzMiLCJhdWQiOiJhc3NpZ25tZW50MDQtYmE2YzMiLCJhdXRoX3RpbWUiOjE3NDE0MzE2NjgsInVzZXJfaWQiOiI2YTNXb0N5MHN4VGlOVHlFVVBKcUw4UGNiR0kzIiwic3ViIjoiNmEzV29DeTBzeFRpTlR5RVVQSnFMOFBjYkdJMyIsImlhdCI6MTc0MTQzMTY2OCwiZXhwIjoxNzQxNDM1MjY4LCJlbWFpbCI6ImFtbkBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6ZmFsc2UsImZpcmViYXNlIjp7ImlkZW50aXRpZXMiOnsiZW1haWwiOlsiYW1uQGdtYWlsLmNvbSJdfSwic2lnbl9pbl9wcm92aWRlciI6InBhc3N3b3JkIn19.J4lAfiHaBOiNMpeaAnG7n1LSIZku1z5cwUa8c5yG8i3UO7f-0cblLBgDYergkIk7WQ-g8XXBRgXqM0hBYDafNWzlD6sMpBsgoypG6xe_ktRA6NTf_1LuddX9hM6Vlovz7P0ZGHPXl0i-Haav21vVPHtuzjGqo4morOpCvG2iq8VbcVqEius0B462hvs6Yh0nb29pIbgsml6K8fEyk3R6rn4oeFZq15IffI6FJPtKTF4Ljt_8GQkZrA67zmFgaD2wgxDEqUqq_n6AfH3F_MMzVQ31jXqakeGzuMXvFTDI9ZZpvJxTrwXd2moB24e8iblSIu2rIVIYerxlGtC7_sek0w",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"uid\": \"pc2eP4Bq99ezsnmecFqIuSE6uef1\",  \r\n  \"role\": \"user\"  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/v1/user/HAjOzxQYNLUPsWQGqALSdlhNDf62",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"v1",
+						"user",
+						"HAjOzxQYNLUPsWQGqALSdlhNDf62"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
